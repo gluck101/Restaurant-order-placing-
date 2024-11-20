@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>This one is very good</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>TABLET A ONLY </title>
+  
+
+  </head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Tablet A - Order System</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* Container styling */
+
+    .container {
+
+      max-width: 700px;
+
+      margin: 0 auto;
+
+      padding: 20px;
+
+      font-family: Arial, sans-serif;
+
+    }
+
+    /* Order and Cart Display Styling */
+
+    .order-item, .cart-item, .pending-order-item {
+
+      background-color: #f9f9f9;
+
+      border: 1px solid #ddd;
+
+      padding: 10px;
+
+      margin-bottom: 10px;
+
+      border-radius: 5px;
+
+    }
+
+    /* General Button Styling */
+
+    button {
+
+      padding: 10px;
+
+      font-size: 14px;
+
+      margin-top: 10px;
+
+      border: none;
+
+      border-radius: 5px;
+
+      cursor: pointer;
+
+    }
+
+    /* Hidden Sections */
+
+    .hidden { display: none; }
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+/* Main Container Styling */
+
+.container {
+
+    max-width: 800px;
+
+    margin: 40px auto;
+
+    padding: 25px;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f4f6f9;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Headings */
+
+h2, h3 {
+
+    color: #333;
+
+    text-align: center;
+
+    font-weight: 600;
+
+}
+
+h2 {
+
+    font-size: 2em;
+
+    margin-bottom: 15px;
+
+    color: #007bff;
+
+}
+
+h3 {
+
+    font-size: 1.5em;
+
+    margin-bottom: 10px;
+
+}
+
+/* Order Item, Cart, and Summary Box Styling */
+
+.order-item, .cart-item, .pending-order-item, .order-history-item {
+
+    background-color: #ffffff;
+
+    border: 1px solid #ddd;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    transition: transform 0.2s;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.order-item:hover, .cart-item:hover, .pending-order-item:hover, .order-history-item:hover {
+
+    transform: scale(1.03);
+
+}
+
+/* Form Elements Styling */
+
+form label {
+
+    font-weight: bold;
+
+    color: #555;
+
+}
+
+form input[type="text"], form select, form input[type="time"] {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 15px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Button Styling */
+
+button {
+
+    padding: 12px 20px;
+
+    font-size: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background-color: #007bff;
+
+    transition: background-color 0.3s, transform 0.2s;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+button:hover {
+
+    background-color: #0056b3;
+
+    transform: scale(1.05);
+
+}
+
+.complete-order-button {
+
+    background-color: #28a745;
+
+}
+
+.complete-order-button:hover {
+
+    background-color: #218838;
+
+}
+
+.cancel-order-button {
+
+    background-color: #dc3545;
+
+}
+
+.cancel-order-button:hover {
+
+    background-color: #c82333;
+
+}
+
+#view-history-button, #go-back-button {
+
+    display: block;
+
+    width: 100%;
+
+    margin: 15px 0;
+
+    font-size: 15px;
+
+}
+
+/* Order Summary Styling */
+
+.pending-order-item {
+
+    background-color: #f9f9f9;
+
+    padding: 30px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 12px;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+
+    font-family: Arial, sans-serif;
+
+    max-width: 700px;
+
+    margin: 20px auto;
+
+}
+
+/* General Text Styling */
+
+.pending-order-item p {
+
+    margin: 12px 0;
+
+    color: #333;
+
+    font-size: 16px;
+
+}
+
+/* Label Styling */
+
+.pending-order-item p strong {
+
+    font-weight: 700;
+
+    color: #444;
+
+}
+
+/* Order Items Table Styling */
+
+.pending-order-item .items-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 15px;
+
+    font-size: 16px;
+
+}
+
+.pending-order-item .items-table th {
+
+    background-color: #007bff;
+
+    color: white;
+
+    font-weight: bold;
+
+    padding: 12px;
+
+    text-align: left;
+
+    border-bottom: 2px solid #ddd;
+
+}
+
+.pending-order-item .items-table td {
+
+    padding: 10px;
+
+    border-bottom: 1px solid #eee;
+
+    color: #333;
+
+}
+
+.pending-order-item .items-table tr:nth-child(even) {
+
+    background-color: #f9f9f9;
+
+}
+
+.pending-order-item .items-table tr:hover {
+
+    background-color: #e0f3ff;
+
+}
+
+/* Status Message Styling */
+
+.pending-order-item p:contains("Your order is ready and Completed.") {
+
+    font-size: 17px;
+
+    color: #28a745;
+
+    font-weight: bold;
+
+    background-color: #e6f9e9;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+}
+
+/* Completed At and Time Remaining Styling */
+
+.pending-order-item p:contains("Completed At:") {
+
+    margin-top: 10px;
+
+}
+
+/* Enlarged Circular Countdown Timer */
+
+.pending-order-item .countdown-timer {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 15px;
+
+    color: white;
+
+    font-weight: bold;
+
+    width: 80px;
+
+    height: 80px;
+
+    margin: 20px auto 0;
+
+    background-color: #ff4b5c;
+
+    border-radius: 50%;
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
+    line-height: 1.5;
+
+    animation: countdownPulse 1s infinite;
+
+}
+
+/* Hide "Time Remaining" Label */
+
+.pending-order-item p:contains("Time Remaining") {
+
+    display: none;
+
+}
+
+/* Countdown Animation */
+
+@keyframes countdownPulse {
+
+    0%, 100% { transform: scale(1); }
+
+    50% { transform: scale(1.1); }
+
+}
+
+/* OK Button Styling */
+
+.pending-order-item .ok-button {
+
+    display: block;
+
+    margin: 25px auto 0;
+
+    padding: 12px 24px;
+
+    font-size: 16px;
+
+    color: white;
+
+    background-color: #007bff;
+
+    border: none;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s, transform 0.2s;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.pending-order-item .ok-button:hover {
+
+    background-color: #0056b3;
+
+    transform: scale(1.05);
+
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    .container, .pending-order-item {
+
+        padding: 20px;
+
+    }
+
+    button {
+
+        font-size: 14px;
+
+        padding: 10px 16px;
+
+    }
+
+    h2 {
+
+        font-size: 1.6em;
+
+    }
+
+    h3 {
+
+        font-size: 1.3em;
+
+    }
+
+}
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </style>
+
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+
+  <script>
+
+    // Firebase configuration
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyADpwAEF3fW5lHmLeAROZUicntXhyv7obo",
+
+      authDomain: "order-to-kitchen.firebaseapp.com",
+
+      databaseURL: "https://order-to-kitchen-default-rtdb.firebaseio.com",
+
+      projectId: "order-to-kitchen",
+
+      storageBucket: "order-to-kitchen.appspot.com",
+
+      messagingSenderId: "850969106226",
+
+      appId: "1:850969106226:web:3c8e3efe31e7b28371692b",
+
+      measurementId: "G-LV04KC1NHT"
+
+    };
+
+    // Initialize Firebase and Realtime Database
+
+    firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.database();
+
+  </script>
+
+</head>
+
+<body>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+        
+
+        
+
+        
+
+        
+
+         
+
+        
+
+        
+
+        
+
+       
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+          
+
+          
+
+         
+
+          
+
+          
+
+   
+
+  
+
+<div class="container">
+
+  <div id="main-section">
+
+    <h2>Place Your Order</h2>
+
+    <div id="dish-container">
+
+      
+      
+          <button onclick="addItemToCart('Acheke and Tilapia 120 DINE-IN', 120)" style="background-color: red;">Acheke and Tilapia 120 DINE-IN</button>
+      
+
+      <button onclick="addItemToCart('Acheke and Tilapia 120 TAKE-OUT', 120)">Acheke and Tilapia 120 TAKE-OUT</button>
+
+      <button onclick="addItemToCart('Acheke and Tilapia 150 DINE-IN', 150)">Acheke and Tilapia 150 DINE-IN</button>
+
+      <button onclick="addItemToCart('Banku and Tilapia 120 TAKE-OUT', 120)">Banku and Tilapia 120 TAKE-OUT</button>
+
+      <button onclick="addItemToCart('Extra Egg 5', 5)">Extra Egg</button>
+
+      <button onclick="addItemToCart('Acheke and Tilapia 150 TAKE-OUT', 150)">Acheke and Tilapia 150 TAKE-OUT</button>
+
+      <button onclick="addItemToCart('Banku and Tilapia 100 DINE-IN', 100)">Banku and Tilapia 100 DINE-IN</button>
+
+      <button onclick="addItemToCart('Banku and Tilapia 100 TAKE-OUT', 100)">Banku and Tilapia 100 TAKE-OUT</button>
+
+
+      
+       <button onclick="addItemToCart('Bank and Tilapia 120 DINE-IN', 120)" style="background-color: purple;">Banku and Tilapia 120 DINE-IN</button>
+      
+      
+      <button onclick="addItemToCart('Extra Plantain 10', 10)">Extra Plantain</button>
+
+      <button onclick="addItemToCart('Extra Red Chili 5', 5)">Extra Red Chili</button>
+
+      <button onclick="addItemToCart('Extra Green Chili 5', 5)">Extra Green Chili</button>
+
+      <button onclick="addItemToCart('Extra Acheke 10', 10)">Extra Acheke</button>
+
+      <button onclick="addItemToCart('FriedRice 25', 25)">Fried Rice</button>
+
+      <button onclick="addItemToCart('Jollof Rice 25', 25)">Jollof Rice</button>
+
+      <button onclick="addItemToCart('Plain Rice 20', 20)">Plain Rice</button>
+
+      <button onclick="addItemToCart('Grilled Chicken 40', 40)">Grilled Chicken</button>
+
+      <button onclick="addItemToCart('Chofi 30', 30)">Chofi</button>
+
+      <button onclick="addItemToCart('Boiled Egg 5', 5)">Boiled Egg</button>
+      
+      
+       <button onclick="addItemToCart('Boiled Egg 5', 5)" style="background-color: orange;">Boiled Egg</button>
+      
+
+      <button onclick="addItemToCart('Fried Chicken 20', 20)">Fried Chicken</button>
+
+      <button onclick="addItemToCart('Coldslaw 5', 5)">Coldslaw</button>
+      
+      
+       <button onclick="addItemToCart('Coldslaw 5', 5)" style="background-color: green;">Coldslaw</button>
+      
+
+         
+         
+         
+    </div>
+
+    <div id="cart-container">
+
+      <h3>Your Cart:</h3>
+
+    </div>
+
+    <form id="order-form">
+
+      <label for="staff-name">Staff Name:</label>
+
+      <input type="text" id="staff-name" required>
+
+      <label for="dine-in-takeout">Dine-In or Takeout:</label>
+
+      <select id="dine-in-takeout">
+
+        <option value="Dine-In">Dine-In</option>
+
+        <option value="Takeout">Takeout</option>
+
+      </select>
+
+      <label for="now-later">Order Time:</label>
+
+      <select id="now-later" onchange="checkOrderTime()">
+
+        <option value="Now">Now</option>
+
+        <option value="Later">Later</option>
+
+      </select>
+
+      <div id="later-time-input" style="display: none;">
+
+        <label for="order-time">Select Time:</label>
+
+        <input type="time" id="order-time">
+
+      </div>
+
+      <!-- Voice Note Recording Section -->
+
+      <div id="voice-note-section">
+
+        <button type="button" id="record-button" onclick="startRecording()" class="record-button">
+
+          <span class="record-icon">🔴</span> Record Voice Note
+
+        </button>
+
+        <button type="button" id="stop-record-button" class="record-button hidden" onclick="stopRecording()">
+
+          Stop Recording
+
+        </button>
+
+        <audio id="audio-preview" controls class="hidden"></audio>
+
+      </div>
+
+      <button type="submit">Send Order</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  
+
+<style>
+
+  /* Container styling */
+
+  .container {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+    font-family: Arial, sans-serif;
+
+  }
+
+  /* Style for the recording button */
+
+  .record-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px 15px;
+
+    font-size: 16px;
+
+    color: white;
+
+    background-color: red;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    transition: background-color 0.3s;
+
+  }
+
+  .record-button:hover {
+
+    background-color: darkred;
+
+  }
+
+  .record-icon {
+
+    margin-right: 8px; /* Space between icon and text */
+
+  }
+
+  /* Hidden Sections */
+
+  .hidden { display: none; }
+
+</style>
+
+  
+
+<div id="pending-orders-section">
+
+  <h3>Pending Orders:</h3>
+
+  <div id="pending-orders-container"></div>
+
+</div>
+
+<button id="view-history-button" onclick="showOrderHistory()">View Order History</button>
+
+<div id="order-history-section" class="hidden">
+
+  <h2>Order History</h2>
+
+  <div id="order-history-container"></div>
+
+  <button id="go-back-button" onclick="showMainSection()">Go Back</button>
+
+</div>
+
+
+  
+  
+    
+    
+    
+    
+    <div class="container">
+  <div id="voice-note-section">
+    <h3>Send Messaging</h3>
+    <div id="voice-controls">
+      <button id="voice-record-button" onclick="startVoiceRecording()">🎙️ Start Recording</button>
+      <button id="voice-stop-button" class="hidden" onclick="stopVoiceRecording()">⏹️ Stop Recording</button>
+
+      <!-- Progress Bar -->
+      <div id="voice-progress-bar" class="progress-bar hidden">
+        <div id="voice-progress-fill"></div>
+      </div>
+      <p id="voice-recording-time" class="hidden">Recording: 0 seconds</p>
+
+      <audio id="voice-preview" controls class="hidden"></audio>
+      
+      <audio id="voice-preview" controls class="hidden"></audio>
+      <button id="voice-send-button" class="hidden" onclick="sendVoiceNote()">📤 Send Message</button>
+    </div>
+  </div>
+</div>
+    
+  <div id="incoming-messages-section">
+  <h3>Incoming Messages</h3>
+  <div id="incoming-messages-container">
+    <!-- Messages will be dynamically added here -->
+  </div>
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+                 
+    
+
+
+  
+  
+  
+  
+  
+  
+
+
+  
+    
+
+   
+
+    
+
+    
+        
+
+    
+          
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+        
+
+    
+
+    
+      
+
+      
+
+      
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+<script>
+  // Initialize global variables
+  let cartItems = [];
+  let audioChunks = [];
+  let audioBase64 = ""; // Stores the Base64 string of the recorded audio
+  let mediaRecorder;
+
+  // Add item to cart
+  function addItemToCart(name, price) {
+    const itemIndex = cartItems.findIndex(item => item.name === name);
+    if (itemIndex >= 0) {
+      cartItems[itemIndex].quantity += 1;
+    } else {
+      cartItems.push({ name, price, quantity: 1 });
+    }
+    updateCartDisplay();
+  }
+
+  // Update cart display
+  function updateCartDisplay() {
+    const cartContainer = document.getElementById('cart-container');
+    cartContainer.innerHTML = '<h3>Your Cart:</h3>';
+    cartItems.forEach((item, index) => {
+      const cartItemDiv = document.createElement('div');
+      cartItemDiv.classList.add('cart-item');
+      cartItemDiv.innerHTML = `
+        ${item.name} - GHS ${item.price} x ${item.quantity}
+        <button onclick="removeItemFromCart(${index})" class="delete-button">Delete</button>
+      `;
+      cartContainer.appendChild(cartItemDiv);
+    });
+  }
+
+  // Remove item from cart
+  function removeItemFromCart(index) {
+    cartItems.splice(index, 1);
+    updateCartDisplay();
+  }
+
+  // Start recording voice note
+  async function startRecording() {
+    audioChunks = [];
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorder = new MediaRecorder(stream);
+      mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+      mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+        const reader = new FileReader();
+        reader.readAsDataURL(audioBlob);
+        reader.onloadend = () => {
+          audioBase64 = reader.result;
+          document.getElementById('audio-preview').src = audioBase64;
+          document.getElementById('audio-preview').classList.remove("hidden");
+        };
+      };
+      mediaRecorder.start();
+      document.getElementById('record-button').classList.add('hidden');
+      document.getElementById('stop-record-button').classList.remove('hidden');
+    } catch (error) {
+      console.error("Microphone access denied or error:", error);
+      alert("Please enable microphone access to record voice notes.");
+    }
+  }
+
+  // Stop recording voice note
+  function stopRecording() {
+    if (mediaRecorder) {
+      mediaRecorder.stop();
+      document.getElementById('record-button').classList.remove('hidden');
+      document.getElementById('stop-record-button').classList.add('hidden');
+    }
+  }
+
+  // Handle order form submission
+  document.getElementById('order-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const staffName = document.getElementById('staff-name').value;
+    const dineInTakeout = document.getElementById('dine-in-takeout').value;
+    const nowLater = document.getElementById('now-later').value;
+    const orderTime = document.getElementById('order-time').value || 'Now';
+
+    if (cartItems.length === 0) {
+      alert("Please add at least one item to the cart.");
+      re;
+    }
+
+    
+     
+
+    const orderData = {
+      staffName,
+      dineInTakeout,
+      orderTime,
+      items: cartItems,
+      timestamp: new Date().toISOString(),
+      voiceNote: audioBase64
+    };
+
+    const ordersRef = firebase.database().ref('orders');
+    ordersRef.push(orderData)
+      .then((newOrderRef) => {
+        alert("Order sent with voice note!");
+        listenForOrderTimers(newOrderRef.key);
+        displayPendingOrder(orderData, "Waiting for confirmation...", newOrderRef.key);
+        resetForm();
+      })
+      .catch(error => {
+        console.error("Error saving order:", error);
+        alert("There was an error submitting your order. Please try again.");
+      });
+  });
+
+  // Reset form after order submission
+  function resetForm() {
+    document.getElementById('order-form').reset();
+    cartItems = [];
+    audioBase64 = "";
+    updateCartDisplay();
+    document.getElementById('audio-preview').classList.add("hidden");
+    document.getElementById('later-time-input').style.display = 'none';
+  }
+
+  // Check order time selection
+  function checkOrderTime() {
+    const nowLater = document.getElementById('now-later').value;
+    document.getElementById('later-time-input').style.display = nowLater === 'Later' ? 'block' : 'none';
+  }
+
+  
+  
+  
+  
+  
+  // Listen for order timers
+  
+  // Listen for order timers and check order status in orderHistory
+ 
+  function listenForOrderTimers(orderKey) {
+    const orderRef = firebase.database().ref(`orders/${orderKey}`);
+    const orderHistoryRef = firebase.database().ref(`orderHistory/${orderKey}`);
+
+    // Listen for changes in the 'orders' node for timers
+    orderRef.on('value', snapshot => {
+        const orderData = snapshot.val();
+        if (orderData) {
+            if (orderData.estimatedTime && !orderData.extraTime) {
+                displayPendingOrder(orderData, `This order will take ${orderData.estimatedTime} minutes.`, orderKey);
+                startCountdown(orderData.estimatedTime * 60, `countdown-${orderKey}`, orderKey);
+            } else if (orderData.extraTime) {
+                displayPendingOrder(orderData, `Extra time of ${orderData.extraTime} minutes added.`, orderKey);
+                startCountdown(orderData.extraTime * 60, `countdown-${orderKey}`, orderKey);
+            }
+        }
+    });
+
+    // Listen for status updates in 'orderHistory' for completed or cancelled status
+    orderHistoryRef.on('value', snapshot => {
+        const orderHistoryData = snapshot.val();
+        if (orderHistoryData) {
+            let message = "";
+            if (orderHistoryData.status === "Completed") {
+                message = "Your order is ready and Completed.";
+                orderHistoryData.completedTimestamp = orderHistoryData.completedTimestamp || new Date().toISOString();
+                orderHistoryRef.update({ completedTimestamp: orderHistoryData.completedTimestamp });
+            } else if (orderHistoryData.status === "Cancelled Order") {
+                message = "Your order has been cancelled.";
+                orderHistoryData.cancelledTimestamp = orderHistoryData.cancelledTimestamp || new Date().toISOString();
+                orderHistoryRef.update({ cancelledTimestamp: orderHistoryData.cancelledTimestamp });
+            }
+
+            if (message) {
+                displayPendingOrder(orderHistoryData, message, orderKey);
+            }
+        }
+    });
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  // Display pending orders
+  
+  
+  
+  
+  
+       function displayPendingOrder(orderData, message, orderKey) {
+    const pendingOrdersContainer = document.getElementById('pending-orders-container');
+    let orderDiv = document.getElementById(`order-${orderKey}`);
+
+    if (!orderDiv) {
+        orderDiv = document.createElement('div');
+        orderDiv.id = `order-${orderKey}`;
+        orderDiv.classList.add('pending-order-item');
+        pendingOrdersContainer.appendChild(orderDiv);
+    }
+
+    let itemsList = '<ul>';
+    orderData.items.forEach(item => {
+        itemsList += `<li>${item.name} - Quantity: ${item.quantity}</li>`;
+    });
+    itemsList += '</ul>';
+
+    const formattedTimestamp = new Date(orderData.timestamp).toLocaleString();
+    let completionMessage = "";
+
+    // Display Completed or Cancelled timestamp if available
+    if (orderData.completedTimestamp) {
+        completionMessage = `<p><strong>Completed At:</strong> ${new Date(orderData.completedTimestamp).toLocaleString()}</p>`;
+    } else if (orderData.cancelledTimestamp) {
+        completionMessage = `<p><strong>Cancelled At:</strong> ${new Date(orderData.cancelledTimestamp).toLocaleString()}</p>`;
+    }
+
+    const countdownId = `countdown-${orderKey}`;
+    orderDiv.innerHTML = `
+        <p><strong>Staff Name:</strong> ${orderData.staffName}</p>
+        <p><strong>Order Time:</strong> ${orderData.orderTime || 'Now'}</p>
+        <p><strong>Dine-In or Takeout:</strong> ${orderData.dineInTakeout}</p>
+        <p><strong>Timestamp:</strong> ${formattedTimestamp}</p>
+        <p><strong>Items:</strong> ${itemsList}</p>
+        <p>${message}</p>
+        ${completionMessage}
+        <p id="${countdownId}" class="countdown-timer">Time Remaining: --:--</p>
+    `;
+
+    if (message.includes("Completed") || message.includes("cancelled")) {
+        showOKButton(orderKey);
+    }
+
+    const estimatedTimeMatch = message.match(/(\d+) minutes/);
+    if (estimatedTimeMatch) {
+        const estimatedTime = parseInt(estimatedTimeMatch[1], 10);
+        startCountdown(estimatedTime * 60, countdownId, orderKey);
+    }
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  // Start countdown timer
+  function startCountdown(seconds, countdownId, orderKey) {
+    const countdownDisplay = document.getElementById(countdownId);
+    if (!countdownDisplay) return;
+    const interval = setInterval(() => {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      countdownDisplay.innerHTML = `Time Remaining: ${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      seconds--;
+      if (seconds < 0) {
+        clearInterval(interval);
+        countdownDisplay.innerHTML = "Time's Up!";
+        countdownDisplay.classList.add("blinking");
+        showOKButton(orderKey);
+      }
+    }, 1000);
+  }
+
+  // Show OK button for completed/cancelled orders
+  function showOKButton(orderKey) {
+    const orderDiv = document.getElementById(`order-${orderKey}`);
+    if (orderDiv) {
+      const existingButton = orderDiv.querySelector('.ok-button');
+      if (!existingButton) {
+        const okButton = document.createElement('button');
+        okButton.textContent = "OK";
+        okButton.className = "ok-button";
+        okButton.style.marginTop = "10px";
+        okButton.onclick = function() {
+          removePendingOrder(orderKey);
+        };
+        orderDiv.appendChild(okButton);
+      }
+    }
+  }
+
+  // Remove pending order
+  function removePendingOrder(orderKey) {
+    const orderDiv = document.getElementById(`order-${orderKey}`);
+    if (orderDiv) {
+      orderDiv.remove();
+      console.log(`Order with key ${orderKey} has been removed.`);
+    }
+  }
+  
+  
+  
+  
+  
+  
+
+  // Fetch order history
+  
+      function fetchOrderHistory() {
+    const orderHistoryRef = firebase.database().ref('orderHistory');
+    orderHistoryRef.once('value', (snapshot) => {
+        const orderHistoryData = snapshot.val();
+        const historyContainer = document.getElementById('order-history-container');
+        historyContainer.innerHTML = ''; // Clear existing content
+
+        for (const orderKey in orderHistoryData) {
+            const order = orderHistoryData[orderKey];
+            let itemsList = '<ul>';
+            order.items.forEach(item => {
+                itemsList += `<li>${item.name} - Quantity: ${item.quantity}</li>`;
+            });
+            itemsList += '</ul>';
+
+            let completionMessage = "";
+            if (order.completedTimestamp) {
+                completionMessage = `<p><strong>Completed At:</strong> ${new Date(order.completedTimestamp).toLocaleString()}</p>`;
+            } else if (order.cancelledTimestamp) {
+                completionMessage = `<p><strong>Cancelled At:</strong> ${new Date(order.cancelledTimestamp).toLocaleString()}</p>`;
+            }
+
+            const orderDiv = document.createElement('div');
+            orderDiv.classList.add('order-history-item');
+            orderDiv.innerHTML = `
+                <p><strong>Staff Name:</strong> ${order.staffName}</p>
+                <p><strong>Order Time:</strong> ${order.orderTime || 'Now'}</p>
+                <p><strong>Dine-In or Takeout:</strong> ${order.dineInTakeout}</p>
+                <p><strong>Timestamp:</strong> ${new Date(order.timestamp).toLocaleString()}</p>
+                <p><strong>Items:</strong> ${itemsList}</p>
+                <p><strong>Status:</strong> 
+                    <span class="${order.status === 'Completed' ? 'status-completed' : order.status === 'Cancelled Order' ? 'status-cancelled' : ''}">
+                        ${order.status}
+                    </span>
+                </p>
+                ${completionMessage}
+            `;
+            historyContainer.appendChild(orderDiv);
+        }
+    });
+}
+  
+  
+  
+  
+  
+  
+  
+
+  // Listen for status updates in order history
+  
+
+       
+  
+
+  
+                
+            
+
+          
+  
+  function listenForOrderHistoryStatus(orderKey, orderData) {
+    const orderHistoryRef = firebase.database().ref(`orderHistory/${orderKey}`);
+
+    orderHistoryRef.on('value', (snapshot) => {
+        const orderHistoryData = snapshot.val();
+        console.log("Order history updated for:", orderKey, orderHistoryData); // Log all changes
+        if (orderHistoryData) {
+            let message;
+            let completionTimestamp = null;
+
+            if (orderHistoryData.status === "Completed") {
+                console.log("Order status is Completed."); // Log specific status
+                message = "Your order is ready and Completed.";
+
+                if (!orderHistoryData.completedTimestamp) {
+                    completionTimestamp = new Date().toISOString();
+                    orderHistoryRef.update({ completedTimestamp: completionTimestamp });
+                } else {
+                    completionTimestamp = orderHistoryData.completedTimestamp;
+                }
+
+            } else if (orderHistoryData.status === "Cancelled Order") {
+                console.log("Order status is Cancelled."); // Log specific status
+                message = "Your order has been cancelled.";
+
+                if (!orderHistoryData.cancelledTimestamp) {
+                    completionTimestamp = new Date().toISOString();
+                    orderHistoryRef.update({ cancelledTimestamp: completionTimestamp });
+                } else {
+                    completionTimestamp = orderHistoryData.cancelledTimestamp;
+                }
+            }
+
+            if (message) {
+                console.log("Displaying order and triggering TTS:", message); // Confirm message before TTS
+                orderData.completionTimestamp = completionTimestamp;
+                displayPendingOrder(orderData, message, orderKey, completionTimestamp);
+
+                // Trigger TTS
+                readOutText(message, 3);
+            }
+        }
+    });
+}
+  
+  
+  
+  
+  
+  function listenForIncomingMessages() {
+    const messagesContainer = document.getElementById('incoming-messages-container');
+    messagesContainer.innerHTML = ''; // Clear any existing messages
+    const thisTabletId = "TabletA"; // Identify this tablet
+
+    // Listen for new messages in the 'messages' node
+    db.ref('messages').on('child_added', snapshot => {
+        const messageData = snapshot.val();
+        const messageId = snapshot.key;
+
+        // Skip messages sent by this tablet
+        if (messageData.sender === thisTabletId) return;
+
+        // Create a message element for display
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message-item');
+        messageDiv.id = `message-${messageId}`;
+
+        // Build message UI
+        messageDiv.innerHTML = `
+            <p><strong>Sender:</strong> ${messageData.sender}</p>
+            <p><strong>Received At:</strong> ${new Date(messageData.timestamp).toLocaleString()}</p>
+            <audio controls src="${messageData.voiceNote}"></audio>
+            <button onclick="removeMessage('${messageId}')">OK</button>
+        `;
+
+        // Add the message to the container
+        messagesContainer.appendChild(messageDiv);
+    });
+
+    // Handle empty state
+    db.ref('messages').on('value', snapshot => {
+        if (!snapshot.exists()) {
+            messagesContainer.innerHTML = '<p>No messages yet.</p>';
+        }
+    });
+}
+  
+  
+  
+  
+// Show order history view
+function showOrderHistory() {
+    // Hide all other sections
+    document.getElementById('main-section').classList.add('hidden');
+    document.getElementById('pending-orders-section').classList.add('hidden');
+    document.getElementById('incoming-messages-section').classList.add('hidden');
+    document.getElementById('voice-note-section').classList.add('hidden');
+
+    // Show only the order history section
+    document.getElementById('order-history-section').classList.remove('hidden');
+
+    // Fetch history each time the history view is shown
+    fetchOrderHistory();
+}
+
+// Show main view
+function showMainSection() {
+    // Hide the history section
+    document.getElementById('order-history-section').classList.add('hidden');
+
+    // Restore all other sections
+    document.getElementById('main-section').classList.remove('hidden');
+    document.getElementById('pending-orders-section').classList.remove('hidden');
+    document.getElementById('incoming-messages-section').classList.remove('hidden');
+    document.getElementById('voice-note-section').classList.remove('hidden');
+}  
+  
+  
+  
+  
+  
+  function removeMessage(messageId) {
+    const confirmation = confirm("Are you sure you want to delete this message?");
+    if (!confirmation) return;
+
+    // Remove from Firebase
+    db.ref(`messages/${messageId}`).remove()
+        .then(() => {
+            // Remove from UI
+            const messageDiv = document.getElementById(`message-${messageId}`);
+            if (messageDiv) {
+                messageDiv.remove();
+            }
+            alert("Message deleted successfully.");
+        })
+        .catch(error => {
+            console.error("Error deleting message:", error);
+            alert("Failed to delete message. Please try again.");
+        });
+}
+  
+  
+  
+  window.onload = function () {
+    listenForIncomingMessages(); // Start listening for incoming messages
+};
+  
+ // Firebase Initialization (Reused)
+
+
+// Variables for Voice Note Recording
+let voiceMediaRecorder;
+let voiceChunks = [];
+let voiceBase64 = "";
+let voiceRecordingSeconds = 0;
+let voiceRecordingInterval;
+
+// Start Voice Recording
+async function startVoiceRecording() {
+  voiceChunks = [];
+  voiceRecordingSeconds = 0;
+
+  // Show progress bar and recording time
+  document.getElementById('voice-progress-bar').classList.remove('hidden');
+  document.getElementById('voice-recording-time').classList.remove('hidden');
+  updateVoiceRecordingProgress();
+
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    voiceMediaRecorder = new MediaRecorder(stream);
+    voiceMediaRecorder.ondataavailable = event => voiceChunks.push(event.data);
+
+    voiceMediaRecorder.onstop = () => {
+      const audioBlob = new Blob(voiceChunks, { type: 'audio/wav' });
+      const reader = new FileReader();
+      reader.readAsDataURL(audioBlob);
+      reader.onloadend = () => {
+        voiceBase64 = reader.result;
+        document.getElementById('voice-preview').src = voiceBase64;
+        document.getElementById('voice-preview').classList.remove('hidden');
+        document.getElementById('voice-send-button').classList.remove('hidden');
+      };
+    };
+
+    voiceMediaRecorder.start();
+    document.getElementById('voice-record-button').classList.add('hidden');
+    document.getElementById('voice-stop-button').classList.remove('hidden');
+  } catch (error) {
+    console.error("Microphone access denied or error:", error);
+    alert("Please enable microphone access to record voice messages.");
+  }
+}
+
+// Stop Voice Recording
+function stopVoiceRecording() {
+  if (voiceMediaRecorder) {
+    voiceMediaRecorder.stop();
+    clearInterval(voiceRecordingInterval); // Stop progress updates
+    document.getElementById('voice-record-button').classList.remove('hidden');
+    document.getElementById('voice-stop-button').classList.add('hidden');
+    document.getElementById('voice-progress-bar').classList.add('hidden');
+    document.getElementById('voice-recording-time').classList.add('hidden');
+  }
+}
+
+// Update Voice Recording Progress
+function updateVoiceRecordingProgress() {
+  const progressFill = document.getElementById('voice-progress-fill');
+  const timeText = document.getElementById('voice-recording-time');
+
+  voiceRecordingInterval = setInterval(() => {
+    voiceRecordingSeconds++;
+    timeText.textContent = `Recording: ${voiceRecordingSeconds} seconds`;
+
+    const progressPercent = Math.min((voiceRecordingSeconds / 60) * 100, 100);
+    progressFill.style.width = `${progressPercent}%`;
+
+    if (voiceRecordingSeconds >= 60) {
+      clearInterval(voiceRecordingInterval);
+      stopVoiceRecording();
+      alert("Maximum recording time reached!");
+    }
+  }, 1000);
+}
+
+// Send Voice Note to Database
+function sendVoiceNote() {
+  const senderId = "TabletA"; // Identify this tablet as the sender
+
+  if (!voiceBase64) {
+    alert("Please record a voice message before sending.");
+    return;
+  }
+
+  const messageData = {
+    sender: senderId,
+    timestamp: new Date().toISOString(),
+    voiceNote: voiceBase64,
+  };
+
+  db.ref('messages').push(messageData)
+    .then(() => {
+      alert("Voice message sent successfully!");
+      resetVoiceMessageForm();
+    })
+    .catch(error => {
+      console.error("Error sending voice message:", error);
+      alert("Failed to send voice message.");
+    });
+}
+
+// Reset Voice Note Form
+function resetVoiceMessageForm() {
+  voiceBase64 = "";
+  voiceChunks = [];
+  voiceRecordingSeconds = 0;
+
+  const progressFill = document.getElementById('voice-progress-fill');
+  const timeText = document.getElementById('voice-recording-time');
+
+  progressFill.style.width = "0%";
+  timeText.textContent = "Recording: 0 seconds";
+
+  document.getElementById('voice-preview').classList.add('hidden');
+  document.getElementById('voice-send-button').classList.add('hidden');
+  document.getElementById('voice-progress-bar').classList.add('hidden');
+  document.getElementById('voice-recording-time').classList.add('hidden');
+
+  document.getElementById('voice-record-button').classList.remove('hidden');
+  document.getElementById('voice-stop-button').classList.add('hidden');
+}
+  
+  
+  
+  
+  
+  
+
+
+
+  
+      // Listen for Incoming Messages
+
+  
+  
+  
+ 
+</script>
+
+        
+
+    
+
+  
+  
+  
+  
+  
+
+  
+     
+
+
+
+
+
+ 
+
+  
+
+
+
+<Script>
+
+  
+  
+  
+
+            
+ 
+
+        
+               
+
+  
+  
+  
+  
+  
+  
+
+        
+                
+
+            
+
+  
+  function listenForOrderStatusUpdates() {
+    const orderHistoryRef = firebase.database().ref('orderHistory');
+
+    orderHistoryRef.on('child_changed', (snapshot) => {
+        const orderData = snapshot.val();
+
+        // Use the staffName if available; default to "Staff" if missing
+        const staffName = orderData.staffName || "Staff";
+
+        if (orderData.status) {
+            let message = "";
+
+            if (orderData.status === "Completed") {
+                message = `${staffName}, your order is ready and completed. Go and pick it up now.`;
+            } else if (orderData.status === "Cancelled Order") {
+                message = `${staffName}, your order has been cancelled.`;
+            } else {
+                console.log(`No action defined for status: ${orderData.status}`);
+                return; // Exit if no action is defined
+            }
+
+            readOutText(message, 3);
+        } else {
+            console.warn("Status field is missing for the updated order.");
+        }
+    });
+}
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+/**
+ * Use Text-to-Speech to read out a message.
+ * @param {string} text - The text to read out loud.
+ * @param {number} repeat - Number of times to repeat the message. Default is 1.
+ */
+function readOutText(text, repeat = 1) {
+    for (let i = 0; i < repeat; i++) {
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.lang = "en-US"; // Set language
+        speech.rate = 1; // Set speaking speed
+        window.speechSynthesis.speak(speech);
+    }
+}
+
+// **1. New Message Notification**
+db.ref('messages').on('child_added', snapshot => {
+    const messageData = snapshot.val();
+    readOutText("You have a new message from the kitchen", 3);
+    console.log(`New message received from ${messageData.sender}`);
+});
+
+// **2. Estimated or Extra Time Added**
+db.ref('orders').on('child_changed', snapshot => {
+    const order = snapshot.val();
+    if (order.extraTime) {
+        readOutText(`Extra time of ${order.extraTime} minutes has been added to your order.`, 3);
+        console.log(`Extra time added for Order ${snapshot.key}: ${order.extraTime} minutes`);
+    } else if (order.estimatedTime) {
+        readOutText(`This order will take ${order.estimatedTime} minutes.`, 3);
+        console.log(`Estimated time set for Order ${snapshot.key}: ${order.estimatedTime} minutes`);
+    }
+});
+
+
+
+  
+  
+  
+db.ref('orderHistory').orderByChild('timestamp').limitToLast(1).on('child_added', snapshot => {
+    const order = snapshot.val();
+
+    // Use the staffName if available; default to "Staff" if missing
+    const staffName = order.staffName || "Staff";
+
+    if (order.status) {
+        let message = "";
+
+        if (order.status === "Completed") {
+            message = `${staffName}, your order is ready and completed. Go and pick it up now.`;
+        } else if (order.status === "Cancelled Order") {
+            message = `${staffName}, your order has been cancelled.`;
+        } else {
+            console.log(`No action defined for status: ${order.status}`);
+            return; // Exit if no action is defined
+        }
+
+        readOutText(message, 3);
+    } else {
+        console.warn("No status found for the last updated order.");
+    }
+});
+
+  
+  
+  
+  
+  
+  
+// **5. Time's Up Notification**
+function startCountdown(seconds, countdownId, orderKey) {
+    const countdownDisplay = document.getElementById(countdownId);
+    if (!countdownDisplay) return;
+
+    const interval = setInterval(() => {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        countdownDisplay.innerHTML = `Time Remaining: ${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        seconds--;
+
+        if (seconds < 0) {
+            clearInterval(interval);
+            countdownDisplay.innerHTML = "Time's Up!";
+            countdownDisplay.classList.add("blinking");
+            readOutText("Time's up for this order!", 3);
+            console.log(`Time's Up for Order ${orderKey}`);
+        }
+    }, 1000);
+}
+
+        
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+        
+        
+  
+  function forceStatusTTS() {
+    const orderHistoryRef = firebase.database().ref('orderHistory');
+
+    orderHistoryRef.on('child_changed', (snapshot) => {
+        const orderData = snapshot.val();
+
+        // Use the staffName if available; default to "Staff" if missing
+        const staffName = orderData.staffName || "Staff";
+
+        if (orderData.status === "Completed") {
+            const message = `${staffName}, your order is ready and completed. Go and pick it up now.`;
+            readOutText(message, 3);
+        } else if (orderData.status === "Cancelled Order") {
+            const message = `${staffName}, your order has been cancelled.`;
+            readOutText(message, 3);
+        }
+    });
+}
+  
+  
+        
+  
+  
+  window.onload = function () {
+    listenForIncomingMessages(); // Existing listener
+    forceStatusTTS(); // New standalone listener for status updates
+};
+  
+  
+</script>
+  
+  
+  
+  
+  
+  
+  
+  
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
